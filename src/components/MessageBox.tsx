@@ -32,10 +32,10 @@ export default function MessageBox({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="w-1/2 h-27 bottom-0 fixed flex flex-col gap-1 px-1 py-2 justify-center bg-gray-900 rounded-t-xl">
+    <div className="w-1/2 h-27 bottom-0 fixed flex flex-col gap-1 px-1 py-2 justify-center bg-indigo-300 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border border-white rounded-t-xl">
       <Textarea
         placeholder="Analyze your startup idea ..."
-        className="w-full border-none text-white/70 resize-none"
+        className="w-full border-none text-black/70 resize-none"
         onChange={handleChange}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {

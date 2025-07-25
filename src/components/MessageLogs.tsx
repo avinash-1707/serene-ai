@@ -197,7 +197,7 @@ export default function MessageLogs({ sessionId }: { sessionId: string }) {
     }
   };
   return (
-    <div className="bg-neutral-950 flex flex-col h-screen">
+    <div className=" flex flex-col h-screen">
       <div className="messages-container h-[calc(100vh-160px)] overflow-y-auto scrollbar-hide">
         <div className="max-w-4xl mx-auto px-4 space-y-4">
           {hasLoaded && messages.length === 0 ? (
@@ -207,10 +207,10 @@ export default function MessageLogs({ sessionId }: { sessionId: string }) {
               transition={{ duration: 0.4 }}
               className="flex flex-1 flex-col h-full items-center justify-center min-h-[60vh]"
             >
-              <div className="text-center bg-gradient-to-r from-red-500 via-green-500 to-blue-500 bg-clip-text text-transparent text-5xl">
+              <div className="text-center bg-gradient-to-r from-indigo-300 via-indigo-200 to-white bg-clip-text text-transparent text-5xl">
                 Hi{user?.name ? `, ${user.name.split(" ")[0]}` : ""}!
               </div>
-              <div className="text-center text-white/70 text-2xl">
+              <div className="text-center text-indigo-900/70 text-2xl">
                 What are you thinking about building today?
               </div>
             </motion.div>
@@ -240,7 +240,7 @@ export default function MessageLogs({ sessionId }: { sessionId: string }) {
         </div>
       </div>
 
-      <div className="flex justify-center w-full p-4 bg-neutral-950">
+      <div className="flex justify-center w-full p-4 bg-white border-t border-indigo-100">
         <MessageBox disabled={loading} onSend={handleSend} />
       </div>
     </div>

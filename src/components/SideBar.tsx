@@ -94,7 +94,7 @@ export default function SideBar() {
   }, [session]);
 
   return (
-    <div className="h-full bg-neutral-900">
+    <div className="h-full bg-white">
       {/* Sidebar */}
       <motion.div
         initial={false}
@@ -104,22 +104,22 @@ export default function SideBar() {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="bg-neutral-900 shadow-lg text-white overflow-hidden"
+        className="bg-white shadow-lg text-indigo-900 overflow-hidden"
       >
         {/* Rest of the sidebar content remains the same */}
-        <div className="p-4 flex justify-between items-center bg-neutral-900">
+        <div className="p-4 flex justify-between items-center bg-indigo-100">
           {!isCollapsed && (
             <h2
               role="button"
               onClick={() => router.push("/")}
-              className="text-xl font-bold text-white cursor-pointer"
+              className="text-xl font-bold text-indigo-900 cursor-pointer"
             >
-              Zeltra AI
+              Serene AI
             </h2>
           )}
           <button
             onClick={toggleSidebar}
-            className="p-2 hover:bg-gray-800 rounded text-white"
+            className="p-2 hover:bg-indigo-200 rounded text-indigo-900"
           >
             {isCollapsed ? <Menu size={24} /> : <PanelRightOpen size={24} />}
           </button>
@@ -132,7 +132,7 @@ export default function SideBar() {
             <motion.button
               variants={childVariants}
               onClick={() => setIsModalOpen(true)}
-              className="w-3/4 px-3 py-2 mt-6 text-white bg-blue-950 hover:bg-blue-800 rounded-3xl text-center"
+              className="w-3/4 px-3 py-2 mt-6 text-indigo-900 bg-gradient-to-br from-indigo-200 via-indigo-100 to-white hover:from-indigo-300 hover:via-indigo-200 hover:to-white rounded-3xl text-center border border-indigo-200"
             >
               + New Chat
             </motion.button>
@@ -152,7 +152,7 @@ export default function SideBar() {
               variants={childVariants}
               key={index}
               onClick={() => router.push(`/chat/${item.id}`)}
-              className={`px-4 py-3 flex items-center hover:bg-gray-700 bg-transparent cursor-pointer rounded-2xl text-white/80 ${
+              className={`px-4 py-3 flex items-center hover:bg-indigo-100 bg-transparent cursor-pointer rounded-2xl text-indigo-900/80 ${
                 isCollapsed ? "justify-center" : ""
               }`}
             >
