@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Book, MessageSquare, Sparkles, Video } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Typewriter } from "react-simple-typewriter";
+import Image from "next/image";
 
 export const HeroSection = () => {
   const router = useRouter();
@@ -60,7 +61,7 @@ export const HeroSection = () => {
               <Button
                 onClick={() => router.push("/chat")}
                 size="lg"
-                className="bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
+                className="bg-gradient-to-br from-blue-900 via-indigo-400 to-purple-400 hover:from-blue-400 hover:to-indigo-700 text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
               >
                 Talk to the Bot
                 <ArrowRight className="ml-1 w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -69,7 +70,7 @@ export const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => router.push("/collection")}
+                onClick={() => router.push("/self-help")}
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg hover:scale-105 cursor-pointer"
               >
                 <Book className="ml-2 w-6 h-6 transition-transform" />
@@ -106,7 +107,13 @@ export const HeroSection = () => {
             <div className="backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-6 max-w-md mx-auto">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-6 h-6" />
+                  <Image
+                    src="/serene-logo.png"
+                    alt="logo"
+                    height={20}
+                    width={20}
+                    className="h-6 w-6"
+                  />
                 </div>
                 <div>
                   <h3 className="font-semibold">Serene AI</h3>
@@ -180,7 +187,7 @@ export const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg"
             >
               <Sparkles className="w-8 h-8 text-white" />
             </motion.div>

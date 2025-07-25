@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export const CallToAction = () => {
   const router = useRouter();
   return (
-    <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
+    <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ y: 50, opacity: 0 }}

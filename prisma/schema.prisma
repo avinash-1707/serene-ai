@@ -8,14 +8,24 @@ datasource db {
 }
 
 model User {
-  id                String        @id @default(uuid())
-  email             String        @unique
+  id                String          @id @default(uuid())
+  email             String          @unique
   name              String?
   avatarUrl         String?
-  sessions          ChatSession[] @relation("UserSessions")
-  createdAt         DateTime      @default(now())
+  sessions          ChatSession[]   @relation("UserSessions")
+  createdAt         DateTime        @default(now())
   provider          String?
   providerAccountId String?
+  emotionRatings    EmotionRating[]
+}
+
+model EmotionRating {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  rating    Int // Range: 1 (low) - 5 (high)
+  emotion   String // Optional: "happy", "sad", "anxious", etc.
+  createdAt DateTime @default(now())
 }
 
 model ChatSession {
