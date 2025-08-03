@@ -16,7 +16,10 @@ export function ModeToggle() {
   React.useEffect(() => {
     if (mounted) {
       console.log("🚀 resolvedTheme:", resolvedTheme);
-      console.log("🧠 document class:", document.documentElement.classList.value);
+      console.log(
+        "🧠 document class:",
+        document.documentElement.classList.value
+      );
     }
   }, [resolvedTheme, mounted]);
 
@@ -34,7 +37,11 @@ export function ModeToggle() {
   }
 
   return (
-    <Button variant="outline" size="icon" onClick={handleToggle}>
+    <Button
+      size="icon"
+      onClick={handleToggle}
+      className="z-50 border-none bg-transparent hover:bg-transparent dark:text-neutral-500 dark:hover:text-neutral-300 text-neutral-600 hover:text-neutral-800"
+    >
       {resolvedTheme === "dark" ? (
         <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
       ) : (
@@ -44,4 +51,3 @@ export function ModeToggle() {
     </Button>
   );
 }
-

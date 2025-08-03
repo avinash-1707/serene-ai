@@ -18,7 +18,6 @@ import { useSearchParams, useRouter } from "next/navigation";
 import LoginModal from "../LoginModal";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 
-
 interface Props {
   searchParamsPromise: Promise<{
     loginRequired?: string;
@@ -89,41 +88,39 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
             <NavbarLogo />
             <NavItems items={navItems} />
             <div className="flex items-center gap-4">
-            <ModeToggle />
-           {session ? (
-           <Profile />
-           ) : (
-           <NavbarButton
-           onClick={() => setOpen(true)}
-           variant="primary"
-           className="rounded-4xl"
-          >
-            Login
-            </NavbarButton>
-            )}
+              <ModeToggle />
+              {session ? (
+                <Profile />
+              ) : (
+                <NavbarButton
+                  onClick={() => setOpen(true)}
+                  variant="primary"
+                  className="rounded-4xl"
+                >
+                  Login
+                </NavbarButton>
+              )}
             </div>
-
           </NavBody>
 
           {/* Mobile Navigation */}
           <MobileNav>
             <MobileNavHeader>
               <NavbarLogo />
-              <div className="flex items-center gap-4">
-                 <ModeToggle />
-                 {session ? (
-                < Profile />
-                 ) : (
-                <NavbarButton
-                 onClick={() => setOpen(true)}
-                variant="primary"
-                className="rounded-4xl"
-               >
-               Login
-              </NavbarButton>
-               )}
+              <div className="flex items-center gap-5">
+                <ModeToggle />
+                {session ? (
+                  <Profile />
+                ) : (
+                  <NavbarButton
+                    onClick={() => setOpen(true)}
+                    variant="primary"
+                    className="rounded-4xl"
+                  >
+                    Login
+                  </NavbarButton>
+                )}
               </div>
-
             </MobileNavHeader>
           </MobileNav>
         </Navbar>
