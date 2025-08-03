@@ -6,11 +6,13 @@ import { ArrowRight, Book, MessageSquare, Sparkles, Video } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
+import FloatingHearts from "@/components/landing-page/FloatingHearts";
 
 export const HeroSection = () => {
   const router = useRouter();
   return (
-    <section className="relative z-10 px-6 md:px-12 py-16 md:py-24">
+      <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 overflow-hidden bg-background text-foreground  dark:bg-background dark:text-foreground p-4">
+      <FloatingHearts />
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -25,21 +27,26 @@ export const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Badge className="bg-transparent text-black/70 border-black/80 mb-2">
-                🌈 Your Queit space
+              <Badge className="inline-flex items-center px-3 py-1 rounded-full bg-[#f3f0fb] border-[#8E7AF4] text-sm font-medium text-[#9166ff]">
+                 ♡ 24/7 Mental Health Support
               </Badge>
             </motion.div>
 
             <motion.h1
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-4xl md:text-6xl font-bold leading-tight"
-            >
-              <span className="bg-black bg-clip-text text-transparent">
-                Your Safe Space when it's hard to speak to anyone else
-              </span>
-            </motion.h1>
+  initial={{ y: 30, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+  className="text-4xl lg:text-6xl font-bold tracking-tight leading-15 text-black"
+>
+  Your Safe Space when it's{" "}
+  <span
+    className="bg-clip-text text-transparent"
+    style={{ backgroundImage: "linear-gradient(to right, #C7B4F9, #8E7AF4)" }}
+  >
+    hard to speak
+  </span>{" "}
+  to anyone else
+</motion.h1>
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}
@@ -47,7 +54,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-xl text-black/60 leading-relaxed max-w-lg"
             >
-              Experience anonymous, 24/7 emotional support with our empathetic
+              A 24/7 emotional support with our empathetic
               AI companion. Get personalized coping strategies, mood tracking,
               and a safe space to express yourself.
             </motion.p>
@@ -61,9 +68,9 @@ export const HeroSection = () => {
               <Button
                 onClick={() => router.push("/chat")}
                 size="lg"
-                className="bg-gradient-to-br from-blue-900 via-indigo-400 to-purple-400 hover:from-blue-400 hover:to-indigo-700 text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
+                className=" rounded-3xl bg-gradient-to-br from-[#8E7AF4] via-[#C7B4F9] to-[#8E7AF4] hover:from-[#978ad9] hover:to-[#a37eff] text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
               >
-                Talk to the Bot
+                Start a conversation
                 <ArrowRight className="ml-1 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Button>
 
@@ -71,10 +78,10 @@ export const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => router.push("/self-help")}
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg hover:scale-105 cursor-pointer"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg rounded-3xl hover:scale-105 cursor-pointer"
               >
-                <Book className="ml-2 w-6 h-6 transition-transform" />
-                Collection
+                <Book className=" ml-2 w-6 h-6 transition-transform" />
+                Find What Helps
               </Button>
             </motion.div>
 
@@ -85,14 +92,14 @@ export const HeroSection = () => {
               className="flex items-center space-x-6 pt-2"
             >
               <div className="flex items-center space-x-2">
-                <Sparkles className="w-5 h-5 text-yellow-500" />
+                <Sparkles className="w-5 h-5 text-[#8064F2]" />
                 <span className="text-sm text-gray-600">
-                  No technical knowledge required
+                  Get results in minutes
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <MessageSquare className="w-5 h-5 text-blue-500" />
-                <span className="text-sm text-gray-600">Instant feedback</span>
+                <MessageSquare className="w-5 h-5 text-[#8064F2]" />
+                <span className="text-sm text-gray-600">Instant assurance</span>
               </div>
             </motion.div>
           </motion.div>
@@ -104,9 +111,9 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-6 max-w-md mx-auto">
+            <div className="backdrop-blur-sm rounded-3xl shadow-lg shadow-[#C7B4F9] border border-[#C7B4F9] p-6 max-w-md mx-auto">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-[#d1c8fe] to-[#e7deff] rounded-full flex items-center justify-center">
                   <Image
                     src="/serene-logo.png"
                     alt="logo"
@@ -116,7 +123,7 @@ export const HeroSection = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Serene AI</h3>
+                  <h3 className="font-semibold text-black">Serene.AI</h3>
                   <p className="text-sm text-green-500">● Online</p>
                 </div>
               </div>
@@ -126,7 +133,7 @@ export const HeroSection = () => {
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.4 }}
-                  className="bg-blue-600/70 rounded-2xl rounded-br-none p-4 ml-4"
+                  className="bg-[#8064F2] rounded-2xl rounded-br-none p-4 ml-4"
                 >
                   <p className="text-white text-sm">
                     I don’t know... I just feel really overwhelmed today.
@@ -138,9 +145,9 @@ export const HeroSection = () => {
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.6 }}
-                  className="bg-gray-300 rounded-2xl rounded-bl-none p-4 mr-10"
+                  className="bg-[#EEEDF2] rounded-2xl rounded-bl-none p-4 mr-10"
                 >
-                  <p className="text-sm">
+                  <p className="text-sm text-black">
                     I'm really sorry you're feeling this way. You're not alone,
                     and I'm here for you. Would you like to talk about what’s
                     been overwhelming you?
@@ -151,7 +158,7 @@ export const HeroSection = () => {
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.8 }}
-                  className="bg-blue-600/70 rounded-2xl rounded-br-none p-4 ml-4"
+                  className="bg-[#8064F2] rounded-2xl rounded-br-none p-4 ml-4"
                 >
                   <p className="text-white text-sm">
                     It’s mostly work and family. No matter what I do, it’s never
@@ -167,13 +174,13 @@ export const HeroSection = () => {
                 className="flex items-center space-x-2 mt-4 pt-4 border-t border-gray-100"
               >
                 <div className="flex space-x-1">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-[#8064F2] rounded-full animate-pulse"></div>
                   <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                    className="w-2 h-2 bg-[#8064F2] rounded-full animate-pulse"
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                    className="w-2 h-2 bg-[#8064F2] rounded-full animate-pulse"
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>
@@ -187,13 +194,18 @@ export const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#8064F2] to-[#C7B4F9] rounded-full flex items-center justify-center shadow-lg"
             >
               <Sparkles className="w-8 h-8 text-white" />
             </motion.div>
           </motion.div>
         </div>
       </div>
+      <style jsx>{`
+        .gradient-text {
+          background-image: linear-gradient(to right, #C7B4F9, #8E7AF4);
+        }
+      `}</style>
     </section>
   );
 };
