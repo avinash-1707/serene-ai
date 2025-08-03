@@ -16,6 +16,8 @@ import { useSession } from "next-auth/react";
 import Profile from "../Profile";
 import { useSearchParams, useRouter } from "next/navigation";
 import LoginModal from "../LoginModal";
+import { ModeToggle } from "@/components/ui/ModeToggle";
+
 
 interface Props {
   searchParamsPromise: Promise<{
@@ -86,38 +88,42 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
           <NavBody>
             <NavbarLogo />
             <NavItems items={navItems} />
-            {session ? (
-              <Profile />
-            ) : (
-              <div className="flex items-center gap-4">
-                <NavbarButton
-                  onClick={() => setOpen(true)}
-                  variant="primary"
-                  className="rounded-4xl"
-                >
-                  Login
-                </NavbarButton>
-              </div>
+            <div className="flex items-center gap-4">
+            <ModeToggle />
+           {session ? (
+           <Profile />
+           ) : (
+           <NavbarButton
+           onClick={() => setOpen(true)}
+           variant="primary"
+           className="rounded-4xl"
+          >
+            Login
+            </NavbarButton>
             )}
+            </div>
+
           </NavBody>
 
           {/* Mobile Navigation */}
           <MobileNav>
             <MobileNavHeader>
               <NavbarLogo />
-              {session ? (
-                <Profile />
-              ) : (
-                <div className="flex items-center gap-4">
-                  <NavbarButton
-                    onClick={() => setOpen(true)}
-                    variant="primary"
-                    className="rounded-4xl"
-                  >
-                    Login
-                  </NavbarButton>
-                </div>
-              )}
+              <div className="flex items-center gap-4">
+                 <ModeToggle />
+                 {session ? (
+                < Profile />
+                 ) : (
+                <NavbarButton
+                 onClick={() => setOpen(true)}
+                variant="primary"
+                className="rounded-4xl"
+               >
+               Login
+              </NavbarButton>
+               )}
+              </div>
+
             </MobileNavHeader>
           </MobileNav>
         </Navbar>
