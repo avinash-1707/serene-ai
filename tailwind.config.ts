@@ -10,10 +10,26 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        mutedForeground: 'var(--muted-foreground)',
+
       },
+      boxShadow: {
+        dreamy: 'var(--shadow-dreamy)',
+        magical: 'var(--shadow-magical)',
+        glow: 'var(--shadow-glow)'
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+  
+      },
+      
+      
     },
+        
+    
   },
-  plugins: [],
+
+  
 };
 
 export default config;

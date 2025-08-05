@@ -7,7 +7,8 @@ import { Badge } from "@/components/ui/badge";
 export const CallToAction = () => {
   const router = useRouter();
   return (
-    <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-[#8669F3]  to-[#C3A1FF]">
+    <section className=" px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-[#8669F3]  to-[#b387ff]">
+      
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -49,11 +50,6 @@ export const CallToAction = () => {
         </motion.div>
       </div>
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-300 rounded-full blur-3xl"></div>
-      </div>
     </section>
   );
 };

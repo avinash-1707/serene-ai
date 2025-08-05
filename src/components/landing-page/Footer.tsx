@@ -26,7 +26,7 @@ export function Footer() {
               <li><a href="#" className="hover:text-foreground transition-colors">Start Chatting</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Mood Tracker</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Resources</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">How It Works</a></li>
+          
             </ul>
           </div>
 

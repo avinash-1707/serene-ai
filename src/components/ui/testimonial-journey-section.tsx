@@ -17,6 +17,11 @@ const testimonials = [
     quote: "Being able to track my emotions without explaining them to anyone else was exactly what I needed.",
     mood: "grateful",
     timeframe: "after 3 weeks"
+  },
+  {
+    quote: "I love how it feels like I'm talking to a friend who just gets me. It's been a game changer for my mental health.",
+    mood: "supported",
+    timeframe: "after 2 months"
   }
 ]
 
@@ -49,21 +54,8 @@ const journeyCards = [
 
 export function TestimonialJourneySection() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
-      {/* Floating hearts background */}
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(8)].map((_, i) => (
-          <div key={i} className={`heart-bg absolute animate-float`} 
-               style={{
-                 top: `${Math.random() * 100}%`,
-                 left: `${Math.random() * 100}%`,
-                 animationDelay: `${i * 2}s`,
-                 animationDuration: `${15 + Math.random() * 10}s`
-               }}>
-            <div className="heart-circle" style={{ width: `${40 + Math.random() * 60}px`, height: `${40 + Math.random() * 60}px` }} />
-          </div>
-        ))}
-      </div>
+    <section className="py-24 px-4 relative overflow-hidden bg-background text-foreground">
+    
 
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
@@ -76,7 +68,7 @@ export function TestimonialJourneySection() {
             See How Others Found Their Path
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Anonymous stories and sample journeys from our community
+            Stories and sample journeys from our community
           </p>
         </div>
 
@@ -85,8 +77,8 @@ export function TestimonialJourneySection() {
           
           {/* Left: Large Featured Testimonial */}
           <div className="lg:col-span-5 space-y-6">
-            <Card className="group relative bg-gradient-card/80 backdrop-blur-sm border-primary/20 hover:shadow-magical transition-all duration-700 hover:scale-[1.02] animate-fade-in">
-              <CardContent className="p-8 space-y-6">
+            <Card className="group relative bg-card/60 border-primary/20 hover:shadow-dreamy transition-all duration-700 hover:scale-[1.02] animate-fade-in">
+              <CardContent className="p-4 space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Quote className="h-6 w-6 text-primary" />
@@ -97,13 +89,14 @@ export function TestimonialJourneySection() {
                     </blockquote>
                     <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                       <span className="flex items-center space-x-1">
-                        <Heart className="h-3 w-3 text-pink-500" />
-                        <span>Feeling {testimonials[0].mood}</span>
-                      </span>
-                      <span className="flex items-center space-x-1">
                         <Calendar className="h-3 w-3" />
                         <span>{testimonials[0].timeframe}</span>
                       </span>
+                      <span className="flex items-center space-x-1">
+                        <Heart className="h-3 w-3 text-pink-500" />
+                        <span>Feeling {testimonials[0].mood}</span>
+                      </span>
+                     
                     </div>
                   </div>
                 </div>
@@ -114,7 +107,7 @@ export function TestimonialJourneySection() {
             {/* Smaller testimonials stacked */}
             <div className="space-y-4">
               {testimonials.slice(1).map((testimonial, index) => (
-                <Card key={index} className="group bg-card/60 backdrop-blur-sm border-primary/15 hover:shadow-soft transition-all duration-500 animate-fade-in"
+                <Card key={index} className="group bg-card/60 backdrop-blur-sm border-primary/15 hover:shadow-dreamy transition-all duration-500 animate-fade-in"
                       style={{ animationDelay: `${(index + 1) * 0.2}s` }}>
                   <CardContent className="p-5">
                     <div className="flex items-start space-x-3">
@@ -138,7 +131,8 @@ export function TestimonialJourneySection() {
           <div className="lg:col-span-7 space-y-6">
             <div className="text-left mb-8">
               <h3 className="text-2xl font-semibold text-foreground mb-2">
-                Your Journey Preview
+               <span className="bg-clip-text text-transparent"
+                  style={{ backgroundImage: "linear-gradient(to right, #9a64f2 , #c564f2)" }} >Your Journey Preview</span>
               </h3>
               <p className="text-muted-foreground">
                 See how your path to wellness might unfold
@@ -151,9 +145,14 @@ export function TestimonialJourneySection() {
               <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary/30 via-primary/20 to-transparent" />
               
               {journeyCards.map((card, index) => (
-                <Card key={index} className="group relative ml-14 bg-gradient-card/60 backdrop-blur-sm border-primary/15 hover:shadow-magical transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                <Card key={index} className="group relative ml-14 bg-gradient-card/60 backdrop-blur-sm border-primary/15 shadow-dreamy hover:shadow-dreamy transition-all duration-500 hover:-translate-y-1 animate-fade-in"
                       style={{ animationDelay: `${(index + 3) * 0.2}s` }}>
-                  <CardContent className="p-6 relative">
+
+                        
+                    {/* Glassmorphism overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-lg pointer-events-none z-0" />
+
+                  <CardContent className="p-6 relative z-10">
                     {/* Timeline dot */}
                     <div className={`absolute -left-[3.75rem] top-6 w-3 h-3 ${card.bgColor} border-2 border-primary/30 rounded-full flex items-center justify-center`}>
                       <div className="w-1.5 h-1.5 bg-primary rounded-full" />
@@ -177,8 +176,6 @@ export function TestimonialJourneySection() {
                       </div>
                     </div>
 
-                    {/* Glassmorphism overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-lg pointer-events-none" />
                   </CardContent>
                 </Card>
               ))}
@@ -186,7 +183,7 @@ export function TestimonialJourneySection() {
 
             {/* CTA at bottom */}
             <div className="pt-6 text-center">
-              <Button className="pulse-glow bg-primary hover:bg-primary/90 text-primary-foreground shadow-warm">
+              <Button className="pulse-glow shadow-glow bg-primary rounded-xl p-6">
                 Start Your Journey
               </Button>
               <p className="text-xs text-muted-foreground mt-3 italic">

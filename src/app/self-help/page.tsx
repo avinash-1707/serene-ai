@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
+import FloatingHearts from "@/components/landing-page/FloatingHearts";
+
 
 const selfHelpMaterials = [
   {
@@ -35,14 +37,15 @@ const selfHelpMaterials = [
 
 export default function SelfHelpPage() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-indigo-200 via-indigo-100 to-white flex flex-col items-center py-12 px-4">
+    <div className=" relative min-h-screen w-full bg-background flex flex-col items-center py-12 px-4">
+      <FloatingHearts />
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold text-indigo-900 mb-8"
-      >
-        Self-Help Materials
+        className="bg-clip-text text-transparent text-4xl md:text-4xl font-bold mb-8"
+        style={{ backgroundImage: "linear-gradient(to right, #9a64f2 , #7564f2)" }} >
+        Find Your Calm: Self-Help Resources
       </motion.h1>
       <div className="w-full max-w-3xl grid gap-6">
         {selfHelpMaterials.map((item, idx) => (
@@ -51,15 +54,15 @@ export default function SelfHelpPage() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1, duration: 0.4 }}
-            className="block bg-white/80 border border-indigo-100 rounded-2xl p-6 shadow hover:shadow-lg hover:bg-indigo-100/60 transition-all"
+            className=" relative block bg-card border border-primary/40 z-100 rounded-2xl p-6 shadow-dreamy  hover:shadow-lg hover:bg-card/50 transition-all"
           >
-            <div className="text-2xl font-semibold text-indigo-900 mb-2">
+            <div className="text-2xl font-semibold text-card-foreground mb-2">
               {item.title}
             </div>
-            <div className="text-indigo-900/70">{item.description}</div>
+            <div className="text-muted-foreground">{item.description}</div>
           </motion.a>
         ))}
       </div>
