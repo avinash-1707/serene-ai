@@ -11,7 +11,7 @@ import FloatingHearts from "@/components/landing-page/FloatingHearts";
 export const HeroSection = () => {
   const router = useRouter();
   return (
-      <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 overflow-hidden bg-background text-foreground  dark:bg-background dark:text-foreground p-4">
+      <section className="relative z-10 px-6 md:px-12 py-16 md:py-24 overflow-hidden bg-background text-foreground ">
       <FloatingHearts />
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -27,7 +27,7 @@ export const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Badge className="inline-flex items-center px-3 py-1 rounded-full bg-[#f3f0fb] border-[#8E7AF4] text-sm font-medium text-[#9166ff]">
+              <Badge className="inline-flex items-center px-3 py-1 rounded-full bg-transparent border-[#8E7AF4] text-sm font-medium text-violet-500">
                  ♡ 24/7 Mental Health Support
               </Badge>
             </motion.div>
@@ -36,7 +36,7 @@ export const HeroSection = () => {
   initial={{ y: 30, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   transition={{ duration: 0.8, delay: 0.6 }}
-  className="text-4xl lg:text-6xl font-bold tracking-tight leading-15 text-black"
+  className="text-4xl lg:text-6xl font-bold tracking-tight leading-15 text-foreground"
 >
   Your Safe Space when it's{" "}
   <span
@@ -52,7 +52,7 @@ export const HeroSection = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-xl text-black/60 leading-relaxed max-w-lg"
+              className="text-xl text-muted-foreground leading-relaxed max-w-lg"
             >
               A 24/7 emotional support with our empathetic
               AI companion. Get personalized coping strategies, mood tracking,
@@ -68,7 +68,7 @@ export const HeroSection = () => {
               <Button
                 onClick={() => router.push("/chat")}
                 size="lg"
-                className=" rounded-3xl bg-gradient-to-br from-[#8E7AF4] via-[#C7B4F9] to-[#8E7AF4] hover:from-[#978ad9] hover:to-[#a37eff] text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
+                className=" pulse-glow shadow-glow bg-gradient-to-r from-violet-400 to via-violet-500 to-violet-400 rounded-xl p-6 text-white px-8 py-6 text-lg group hover:scale-105 cursor-pointer"
               >
                 Start a conversation
                 <ArrowRight className="ml-1 w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -78,8 +78,8 @@ export const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => router.push("/self-help")}
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-lg rounded-3xl hover:scale-105 cursor-pointer"
-              >
+                className="relative px-8 py-6 border border-[#d39eff] text-foreground text-lg rounded-2xl transition duration-300
+                        hover:bg-[#c59eff1a] hover:shadow-[0_0_12px_#B69EFF]">
                 <Book className=" ml-2 w-6 h-6 transition-transform" />
                 Find What Helps
               </Button>
@@ -111,9 +111,9 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="backdrop-blur-sm rounded-3xl shadow-lg shadow-[#C7B4F9] border border-[#C7B4F9] p-6 max-w-md mx-auto">
+            <div className="backdrop-blur-sm rounded-3xl shadow-dreamy border border-primary/20 p-6 max-w-md mx-auto">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-[#d1c8fe] to-[#e7deff] rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
                   <Image
                     src="/serene-logo.png"
                     alt="logo"
@@ -123,7 +123,7 @@ export const HeroSection = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">Serene.AI</h3>
+                  <h3 className="font-semibold text-foreground">Serene.AI</h3>
                   <p className="text-sm text-green-500">● Online</p>
                 </div>
               </div>

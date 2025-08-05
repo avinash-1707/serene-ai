@@ -94,7 +94,7 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
               ) : (
                 <NavbarButton
                   onClick={() => setOpen(true)}
-                  variant="primary"
+                  variant="gradient"
                   className="rounded-4xl"
                 >
                   Login
@@ -115,7 +115,7 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
                   <NavbarButton
                     onClick={() => setOpen(true)}
                     variant="primary"
-                    className="rounded-4xl"
+                    className="rounded-2xl"
                   >
                     Login
                   </NavbarButton>

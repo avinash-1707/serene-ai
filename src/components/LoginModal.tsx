@@ -13,23 +13,23 @@ export default function LoginModal({ onClose }: { onClose: () => void }) {
       exit={{ scale: 0.7, opacity: 0 }}
       className="fixed inset-0 flex items-center justify-center bg-white/30 z-50 backdrop-blur"
     >
-      <div className="bg-indigo-300/70 py-6 px-10 mx-3.5 rounded-2xl w-full h-1/3 lg:w-1/3 lg:h-1/2 relative flex flex-col items-center">
-        <button
+      <div className="bg-primary/10 py-6 px-10 mx-3.5 rounded-2xl w-full h-1/3 lg:w-1/3 lg:h-1/2 relative flex flex-col items-center">
+        <Button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 text-xl cursor-pointer"
+          className="absolute top-2 right-2 bg-transparent cursor-pointer"
         >
-          <X className="text-white/20" />
-        </button>
-        <h2 className="text-md lg:text-2xl font-semibold mb-4 text-neutral-500">
+          <X className="text-foreground" />
+        </Button>
+        <h2 className="text-md lg:text-2xl font-semibold mb-4 text-foreground">
           Sign In to
         </h2>
-        <h2 className="text-4xl lg:text-6xl font-bold mb-4 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent">
-          Zeltra AI
+        <h2 className="text-4xl lg:text-6xl font-bold mb-4 bg-gradient-to-br from-violet-600 to-violet-400 bg-clip-text text-transparent">
+          Serene.AI
         </h2>
         <div className=" mb-8 flex flex-col items-center justify-evenly w-full h-full">
           <Button
             onClick={() => signIn("google", { callbackUrl: "/chat" })}
-            className="w-full bg-blue-600 hover:bg-blue-800 text-white text-lg p-5 rounded-3xl mb-2 cursor-pointer"
+            className="w-full bg-violet-600 hover:bg-violet-600 text-white text-lg p-5 rounded-3xl mb-2 cursor-pointer"
           >
             <span className="mr-2">
               <svg

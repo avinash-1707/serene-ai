@@ -43,7 +43,7 @@ export function ModeToggle() {
       className="z-50 border-none bg-transparent hover:bg-transparent dark:text-neutral-500 dark:hover:text-neutral-300 text-neutral-600 hover:text-neutral-800"
     >
       {resolvedTheme === "dark" ? (
-        <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+        <Moon className="h-[1.2rem] w-[1.2rem]  transition-all" />
       ) : (
         <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
       )}

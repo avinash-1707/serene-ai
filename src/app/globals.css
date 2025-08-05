@@ -42,18 +42,23 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --shadow-dreamy: 0 20px 60px -10px oklch(76.018% 0.16032 307.735 / 0.277), 0 8px 32px -8px oklch(0.8 0.2 268 / 0.15);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-gradient-card: var(--gradient-card) ;
+  
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --background: oklch(98.148% 0.01144 307.997);
+  --foreground: oklch(0.15 0.02 251);
+  --card: oklab(100% 0 -0.00011);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: oklch(63.058% 0.22097 293.53);
+  --primary-foreground: oklch(100% 0.00011 271.152);
+  --primary-soft: oklch(95.422% 0.03162 314.533);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -79,17 +84,22 @@
   --sidebar-ring: oklch(0.708 0 0);
   --color-serene-purple-dark: oklch(0.60 0.20 280);
   --color-serene-purple-light: oklch(0.81 0.14 290);
+  --shadow-dreamy: 0 20px 60px -10px oklch(69.906% 0.19215 306.589 / 0.205), 0 8px 32px -8px oklch(0.8 0.2 268 / 0.15);
+  --muted-foreground: oklch(0.45 0.015 251);
+  --gradient-card: linear-gradient(145deg, oklch(100% 0.00011 271.152), oklch(83.164% 0.11127 309.006), oklch(73.936% 0.17072 305.695));
+
+
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --background: oklch(11.84% 0.05082 311.049 / 0.916);
+  --foreground: oklch(100% 0.00011 271.152);
+  --card: oklch(19.053% 0.08401 314.431);
+  --card-foreground: oklch(100% 0.00011 271.152);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(56.043% 0.26866 292.803);
+  --primary-foreground: oklch(0.08 0.025 251);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -115,6 +125,10 @@
   --sidebar-ring: oklch(0.556 0 0);
   --color-serene-purple-light: oklch(67.287% 0.18316 289.925);
   --color-serene-purple-dark: oklch(53.724% 0.19579 278.881);
+  --shadow-dreamy: 0 20px 60px -10px oklch(76.116% 0.16064 308.17 / 0.208), 0 8px 32px -8px oklch(71.238% 0.20075 309.21 / 0.148);
+  --muted-foreground: oklch(0.6 0.03 252);
+  --gradient-card: linear-gradient(145deg, oklch(100% 0.00011 271.152), oklch(27.955% 0.11159 302.093), oklch(21.482% 0.1028 306.939));
+    
 
 }
 
@@ -126,6 +140,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -152,3 +167,189 @@
   }
   
 }
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px oklch(62.489% 0.23979 299.947 / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px oklch(63.46% 0.24134 303 / 0.5), 0 0 60px oklch(62.809% 0.24026 300.97 / 0.2);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 0.5s ease-in-out infinite;
+}
+/* ------------------------------------------
+   Wave Background Effect
+--------------------------------------------- */
+
+.wave-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    oklch(0.8 0.08 280 / 0.12) 0%,
+    oklch(0.85 0.1 250 / 0.15) 25%,
+    oklch(0.9 0.06 300 / 0.08) 50%,
+    oklch(0.85 0.1 250 / 0.15) 75%,
+    oklch(0.8 0.08 280 / 0.12) 100%
+  );
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 85%,
+    85% 90%,
+    70% 88%,
+    55% 92%,
+    40% 89%,
+    25% 91%,
+    10% 88%,
+    0% 90%
+  );
+  animation: wave-flow 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.wave-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    oklch(0.75 0.12 320 / 0.08) 0%,
+    oklch(0.8 0.1 290 / 0.12) 50%,
+    oklch(0.75 0.12 320 / 0.08) 100%
+  );
+  clip-path: polygon(
+    0% 15%,
+    15% 10%,
+    30% 12%,
+    45% 8%,
+    60% 11%,
+    75% 9%,
+    90% 12%,
+    100% 10%,
+    100% 100%,
+    0% 100%
+  );
+  animation: wave-flow 25s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+/* Dark mode adjustments */
+.dark .wave-bg::before {
+  background: linear-gradient(
+    135deg,
+    oklch(0.3 0.08 280 / 0.15) 0%,
+    oklch(0.35 0.1 250 / 0.18) 25%,
+    oklch(0.4 0.06 300 / 0.12) 50%,
+    oklch(0.35 0.1 250 / 0.18) 75%,
+    oklch(0.3 0.08 280 / 0.15) 100%
+  );
+}
+
+.dark .wave-bg::after {
+  background: linear-gradient(
+    45deg,
+    oklch(0.25 0.12 320 / 0.12) 0%,
+    oklch(0.3 0.1 290 / 0.15) 50%,
+    oklch(0.25 0.12 320 / 0.12) 100%
+  );
+}
+
+/* Add the animation keyframes */
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(1%) translateY(-2%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.flow-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flow-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      oklch(0.8 0.08 280 / 0.1) 20%,
+      oklch(0.85 0.06 250 / 0.15) 40%,
+      oklch(0.9 0.04 300 / 0.08) 60%,
+      oklch(0.75 0.1 220 / 0.12) 80%,
+      transparent 100%
+    );
+    mask: linear-gradient(
+      45deg,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      45deg,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+    animation: flow-lines 20s linear infinite;
+    pointer-events: none;
+  }
+
+  .flow-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      oklch(0.85 0.08 300 / 0.08) 30%,
+      oklch(0.8 0.1 260 / 0.12) 50%,
+      oklch(0.9 0.06 280 / 0.06) 70%,
+      transparent 100%
+    );
+    mask: linear-gradient(
+      -45deg,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      -45deg,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+    animation: flow-lines 25s linear infinite reverse;
+    pointer-events: none;
+  }

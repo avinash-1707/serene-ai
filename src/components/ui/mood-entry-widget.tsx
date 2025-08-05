@@ -21,9 +21,9 @@ export function MoodEntryWidget() {
   }
 
   return (
-    <section className=" bg-[#fbfaff] py-16 px-4">
+    <section className=" bg-background  wave-bg  py-16 px-4">
       <div className="container mx-auto max-w-2xl">
-        <Card className="border border-grey-400  shadow-lg shadow-violet-200" >
+        <Card className="border border-primary/30  shadow-[0_0_12px_#B69EFF] bg-card" >
           <CardContent className="p-8 text-center space-y-6">
             <div className="space-y-3">
               <h3 className="text-2xl font-semibold">How are you feeling right now?</h3>
