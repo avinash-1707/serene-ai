@@ -207,11 +207,11 @@ export default function MessageLogs({ sessionId }: { sessionId: string }) {
               transition={{ duration: 0.4 }}
               className="flex flex-1 flex-col h-full items-center justify-center min-h-[60vh]"
             >
-              <div className="text-center bg-gradient-to-r from-indigo-300 via-indigo-200 to-white bg-clip-text text-transparent text-5xl">
-                Hi{user?.name ? `, ${user.name.split(" ")[0]}` : ""}!
+              <div className="text-center bg-gradient-to-r from-violet-400 via-violet-500 to-violet-600 font-semibold  bg-clip-text text-transparent text-5xl">
+                Hello{user?.name ? `, ${user.name.split(" ")[0]}` : ""}!
               </div>
-              <div className="text-center text-indigo-900/70 text-2xl">
-                What are you thinking about building today?
+              <div className="text-center text-muted-foreground font-ru text-2xl">
+                What's on your mind today?
               </div>
             </motion.div>
           ) : (

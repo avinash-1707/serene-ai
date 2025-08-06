@@ -32,10 +32,10 @@ export default function MessageBox({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="w-1/2 h-27 bottom-0 fixed flex flex-col gap-1 px-1 py-2 justify-center bg-indigo-300 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border border-white rounded-t-xl">
+    <div className="w-1/2 h-27 bottom-4 fixed flex flex-col gap-1 px-1 py-10 justify-center bg-card  border border-primary/30 rounded-xl">
       <Textarea
-        placeholder="Analyze your startup idea ..."
-        className="w-full border-none text-black/70 resize-none"
+        placeholder="Pour your heart out to Serene.AI"
+        className="w-full border-none text-foreground  resize-none "
         onChange={handleChange}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
@@ -45,9 +45,9 @@ export default function MessageBox({ onSend, disabled }: ChatInputProps) {
         }}
         value={message}
       />
-      <div className="w-full px-2 flex justify-between items-center">
+      <div className="w-full px-2 flex justify-between items-center bottom-4">
         <Select value={model} onValueChange={setModel}>
-          <SelectTrigger className="w-fit text-[12px]">
+          <SelectTrigger className="w-fit text-[12px] bg-primary/20 mb-4 border border-primary/30 rounded-lg text-muted-foreground">
             <SelectValue placeholder={model} />
           </SelectTrigger>
           <SelectContent>
@@ -64,7 +64,7 @@ export default function MessageBox({ onSend, disabled }: ChatInputProps) {
         </Select>
         <Button
           disabled={disabled}
-          className={`mt-6 m-0.5 bg-neutral-300/90 hover:bg-neutral-300/70 cursor-pointer text-black ${
+          className={`mt-6 m-0.5  mb-4 bg-transparent hover:bg-primary/20 cursor-pointer text-foreground ${
             disabled ? "animate-pulse duration-300" : ""
           }`}
           onClick={handleSend}

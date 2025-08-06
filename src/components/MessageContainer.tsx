@@ -85,8 +85,8 @@ export default function MessageContainer({
           text-md px-4 py-2 rounded-2xl
           ${
             role === "human"
-              ? "max-w-[600px] bg-indigo-500/70 text-white rounded-bl-none self-start"
-              : "w-[1200px] my-8 bg-transparent text-black self-end"
+              ? "max-w-[600px] bg-[#8064F2] text-foreground rounded-bl-none self-start"
+              : "w-[1200px] my-8 bg-transparent text-foreground self-end"
           }
         `}
       >

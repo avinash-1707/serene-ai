@@ -50,7 +50,7 @@ export const HowItWorks = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              <Card className="bg-gradient-to-b from-primary/1 to-primary/10 relative group hover:shadow-[0_0_12px_#f6dffff9] transition-all duration-300 hover:-translate-y-1 border-violet-200 z-10">
+              <Card className="bg-gradient-to-br from-primary/1 to-primary/10 relative group hover:shadow-[0_0_12px_#f6dffff9] transition-all duration-300 hover:-translate-y-1 border-violet-200 z-10">
                 <CardContent className="p-8 text-center space-y-6">
                   <div className="flex items-center justify-center w-16 h-16 bg-[#fcf6fffc] rounded-full group-hover:scale-110 transition-transform duration-300 mx-auto shadow-lg hover:shadow-dreamy">
                     <step.icon className={`h-8 w-8 ${step.color}`} />

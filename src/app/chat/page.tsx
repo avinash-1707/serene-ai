@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 import { motion } from "motion/react";
 import NewChatNavbar from "@/components/NewChatNavbar";
+import FloatingHearts from "@/components/landing-page/FloatingHearts";
 
 const parentVariants = {
   initial: {},
@@ -75,15 +76,17 @@ export default function ChatHome() {
 
   if (status === "loading")
     return (
-      <div className="relative min-h-screen bg-gradient-to-br from-indigo-200 via-indigo-100 to-white p-8">
+      <div className="relative min-h-screen bg-gradient-to-br from-violet-200 via-violet-100 to-white p-8">
         <div className="absolute inset-0 bg-white/60 flex items-center justify-center z-50">
-          <div className="w-12 h-12 border-4 border-indigo-300 border-t-transparent rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-violet-300 border-t-transparent rounded-full animate-spin" />
         </div>
       </div>
     );
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-indigo-200 via-indigo-100 to-white flex justify-center items-center">
+    <div className="h-screen w-screen bg-background flex justify-center items-center">
+      
+      <FloatingHearts/>
       <NewChatNavbar />
       <NewChatModal
         isOpen={isModalOpen}
@@ -94,7 +97,7 @@ export default function ChatHome() {
         initial={{ scale: 0.8, opacity: 0.4 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }}
-        className="h-3/4 w-full mx-2 lg:w-1/2 bg-white/70 rounded-2xl lg:px-5 flex flex-col items-center shadow-xl"
+        className="h-3/4 w-full mx-2 lg:w-1/2 bg-card border border-card/50 z-100  p-6 shadow-dreamy rounded-2xl lg:px-5 flex flex-col items-center "
       >
         <div className="w-full flex justify-center py-10">
           <motion.button
@@ -102,12 +105,12 @@ export default function ChatHome() {
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsModalOpen(true)}
             disabled={loading}
-            className="px-10 py-3 bg-gradient-to-br from-indigo-300 via-indigo-200 to-white text-indigo-900 rounded-2xl hover:from-indigo-200 hover:via-indigo-100 hover:to-white cursor-pointer border border-indigo-200"
+            className="px-10 py-3 bg-gradient-to-br from-violet-400 to to-violet-500 text-white rounded-xl hover:bg-primary/60 cursor-pointer border border-primary/10 shadow-dreamy transition-colors duration-300 flex items-center justify-center"
           >
             {loading ? "Creating..." : "➕ New Chat"}
           </motion.button>
         </div>
-        <Separator className="bg-indigo-200/80" />
+        <Separator className="bg-primary/30" />
         <motion.div
           variants={parentVariants}
           initial="initial"
@@ -115,7 +118,7 @@ export default function ChatHome() {
           className="bg-transparent custom-scrollbar rounded w-7/8 h-7/10 m-6 px-3 overflow-y-auto "
         >
           {chatLogs.length === 0 ? (
-            <div className="h-full w-full bg-transparent flex items-center justify-center text-indigo-300 text-3xl">
+            <div className="h-full w-full bg-transparent flex items-center justify-center text-foreground text-3xl">
               No Chat History
             </div>
           ) : (
@@ -128,7 +131,7 @@ export default function ChatHome() {
                   ease: "easeInOut",
                 }}
                 onClick={() => router.push(`/chat/${item.id}`)}
-                className={`px-4 py-3 mb-2 flex items-center hover:bg-indigo-100 cursor-pointer rounded-2xl bg-white/80 text-indigo-900 justify-center border border-indigo-100`}
+                className={`px-4 py-3 mb-2 flex items-center hover:bg-primary/20 cursor-pointer rounded-2xl bg-primary/5 text-foreground  justify-center border border-primary/20`}
               >
                 <span className="ml-3">{item.title}</span>
               </motion.div>
@@ -137,5 +140,6 @@ export default function ChatHome() {
         </motion.div>
       </motion.div>
     </div>
+  
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import FloatingHearts from "@/components/landing-page/FloatingHearts";
 import { useState, useEffect } from "react";
 
 export default function EmotionForm() {
@@ -51,7 +52,13 @@ export default function EmotionForm() {
   };
 
   return (
-    <div className="space-y-4 p-4 border rounded-lg max-w-md bg-white shadow">
+    <>
+    <FloatingHearts />
+
+   <div className="w-full h-screen flex items-center justify-center wave-bg">
+
+    <div className="space-y-4 p-4 border rounded-lg max-w-md bg-white shadow-dreamy ">
+
       {submittedToday ? (
         <p className="text-green-600 font-medium">{message}</p>
       ) : (
@@ -86,7 +93,7 @@ export default function EmotionForm() {
 
           <button
             onClick={handleSubmit}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600"
           >
             Submit
           </button>
@@ -97,5 +104,7 @@ export default function EmotionForm() {
         <p className="text-sm text-gray-600">{message}</p>
       )}
     </div>
+    </div>
+    </>
   );
 }

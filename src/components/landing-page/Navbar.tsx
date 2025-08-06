@@ -87,7 +87,7 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
           <NavBody>
             <NavbarLogo />
             <NavItems items={navItems} />
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ">
               <ModeToggle />
               {session ? (
                 <Profile />
@@ -114,7 +114,7 @@ export function LandingNavbar({ searchParamsPromise }: Props) {
                 ) : (
                   <NavbarButton
                     onClick={() => setOpen(true)}
-                    variant="primary"
+                    variant="gradient"
                     className="rounded-2xl"
                   >
                     Login

@@ -12,7 +12,7 @@ export default function Chat() {
     <div className="flex h-screen">
       <SideBar />
 
-      <div className="flex-1 h-full flex flex-col items-center bg-gradient-to-br from indigo-200 via-indigo-100 to-white text-white">
+      <div className="flex-1 h-full flex flex-col items-center bg-background  text-white">
         <div className="w-full">
           <ChatNavbar />
         </div>

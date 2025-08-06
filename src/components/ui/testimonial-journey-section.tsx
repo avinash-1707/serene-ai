@@ -183,7 +183,7 @@ export function TestimonialJourneySection() {
 
             {/* CTA at bottom */}
             <div className="pt-6 text-center">
-              <Button className="pulse-glow shadow-glow bg-primary rounded-xl p-6">
+              <Button className="pulse-glow shadow-glow bg-primary rounded-xl p-6 text-white hover:bg-primary/80">
                 Start Your Journey
               </Button>
               <p className="text-xs text-muted-foreground mt-3 italic">

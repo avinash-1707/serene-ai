@@ -75,14 +75,15 @@ export const HeroSection = () => {
               </Button>
 
               <Button
-                variant="outline"
-                size="lg"
-                onClick={() => router.push("/self-help")}
-                className="relative px-8 py-6 border border-[#d39eff] text-foreground text-lg rounded-2xl transition duration-300
-                        hover:bg-[#c59eff1a] hover:shadow-[0_0_12px_#B69EFF]">
-                <Book className=" ml-2 w-6 h-6 transition-transform" />
-                Find What Helps
+              variant="ghost" // change from outline to ghost to reduce interference
+              size="lg"
+              onClick={() => router.push("/self-help")}
+              className="flex items-center gap-2 px-8 py-6 p-6 text-lg rounded-xl border border-[#8064F2] text-foreground bg-transparent hover:shadow-[0_0_10px_2px_rgba(139,92,246,0.5)] hover:text-[#8064F2] transition-all duration-300"
+              >
+              <Book className="ml-2 w-6 h-6 transition-transform" />
+              Find What Helps
               </Button>
+
             </motion.div>
 
             <motion.div

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export const CallToAction = () => {
   const router = useRouter();
   return (
-    <section className=" px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-[#8669F3]  to-[#b387ff]">
+    <section className=" px-6 md:px-12 py-16 md:py-24 bg-gradient-to-br from-primary/50  to-primary">
       
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
